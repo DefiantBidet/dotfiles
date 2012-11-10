@@ -30,9 +30,11 @@ fi
 
 # List all files colorized in long format
 alias l="ls -l ${colorflag}"
+alias ll="ls -l ${colorflag}"
 
 # List all files colorized in long format, including dot files
 alias la="ls -la ${colorflag}"
+alias lla="ls -la ${colorflag}"
 
 
 # List only directories
@@ -115,4 +117,4 @@ done
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 10'"
-alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
+alias hax="growl('WTF R U DOIN', { title: 'System error - WTF??!?!', name: 'Activity Monitor', image: 'Activity Monitor', sticky: true })"

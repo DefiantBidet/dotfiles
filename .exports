@@ -1,5 +1,7 @@
 # Make vim the default editor
-export EDITOR="vim"
+# export EDITOR="vim"
+# Make sublime the default editor
+export EDITOR="subl -nw"
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
 
@@ -15,3 +17,5 @@ export HISTTIMEFORMAT
 
 # Make some commands not show up in history
 export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
+
+export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"

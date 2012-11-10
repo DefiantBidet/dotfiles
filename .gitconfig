@@ -1,15 +1,23 @@
 [alias]
-	c = commit -am
+	s = status -s
+	st = status -sb
+	c = commit -a
+	ci = commit
+	co = checkout
 	up = pull
 	p = push
-	s = status -s
 	df = diff --color --color-words --abbrev
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	sub = submodule update --init --recursive
+	whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+	whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+	pullall = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
 [color]
 	ui = always
 [apply]
 	whitespace = fix
 [core]
+	autocrlf = false
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
@@ -43,5 +51,19 @@
 
 # Any GitHub repo with my username should be checked out r/w by default
 # http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules
-[url "git@github.com:paulirish/"]
-  insteadOf = "git://github.com/paulirish/"
+# [url "git@github.com:paulirish/"]
+#  insteadOf = "git://github.com/paulirish/"
+
+
+[user]
+	name = James Dean
+	email = dean.jah@gmail.com
+[credential]
+	helper = osxkeychain
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
