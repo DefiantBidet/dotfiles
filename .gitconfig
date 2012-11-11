@@ -54,10 +54,6 @@
 # [url "git@github.com:paulirish/"]
 #  insteadOf = "git://github.com/paulirish/"
 
-
-[user]
-	name = James Dean
-	email = dean.jah@gmail.com
 [credential]
 	helper = osxkeychain
 [difftool "sourcetree"]
@@ -67,3 +63,8 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 
+[push]
+	default = current
+[user]
+	name = James Dean
+	email = dean.jah@gmail.com
