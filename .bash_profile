@@ -11,6 +11,10 @@ unset file
 # init rvm
 source ~/.rvm/scripts/rvm
 
+# init nvm
+. ~/.nvm/nvm.sh
+[[ -s $HOME.nvm/nvm.sh ]] && . $HOME.nvm/nvm.sh # This loads NVM
+
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 

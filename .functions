@@ -119,3 +119,15 @@ function extract() {
 		echo "'$1' is not a valid file"
 	fi
 }
+
+# Prints all colors and their code
+# Credits: http://www.askapache.com/linux/bash_profile-functions-advanced-shell.html
+aa_256 () {
+    ( x=`tput op` y=`printf %$((${COLUMNS}-6))s`;
+        for i in {0..256};
+        do
+            o=00$i;
+            echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;
+        done
+    )
+}

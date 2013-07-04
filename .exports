@@ -18,4 +18,6 @@ export HISTTIMEFORMAT
 # Make some commands not show up in history
 export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
 
-#export PATH="$PATH"
+export LOCAL_BIN_ROOT='/Users/jdean/bin';
+export FB_BIN_ROOT='/Users/jdean/Workspaces/Affinitive/FacebookApps/tools/bin';
+export PATH=$LOCAL_BIN_ROOT:$FB_BIN_ROOT:$PATH;

@@ -1,36 +1,54 @@
-[alias]
-
-    s = status -sb
-    st = status -sb
-    c = commit
-    ca = commit -a
-    co = checkout
-    down = pull
-    up = push
-    p = push
-    pl = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
-    d  = diff
-    dc = diff --cached
-    df = diff --color --color-words --abbrev
-    lc = log ORIG_HEAD.. --stat --no-merges
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-    gl = log --oneline --decorate --stat --graph
-    sub = submodule update --init --recursive
-    whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
-    whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
-    pullall = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
-    prune-all = !git remote | xargs -n 1 git remote prune
-    # Undo a `git push`
-    undopush = push -f origin HEAD^:master
-[color]
-	ui = always
-[apply]
-	whitespace = fix
+[user]
+	name = James Dean
+	email = dean.jah@gmail.com
+[push]
+	default = current
 [core]
-	autocrlf = false
-	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
+	autocrlf = false
+	safecrlf = false
+	editor = subl -nw
+	excludesfile = /Users/jdean/.gitignore_global
+	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
+[alias]
+	s = status -sb
+	st = status -sb
+	c = commit
+	ca = commit -a
+	co = checkout
+	down = pull
+	up = push
+	p = push
+	pl = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
+	d  = diff
+	dc = diff --cached
+	df = diff --color --color-words --abbrev
+	lc = log ORIG_HEAD.. --stat --no-merges
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	gl = log --oneline --decorate --stat --graph
+	sub = submodule update --init --recursive
+	whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+	whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+	pullall = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
+	prune-all = !git remote | xargs -n 1 git remote prune
+	# Undo a `git push`
+	undopush = push -f origin HEAD^:master
+[log]
+	decorate = short
+[color]
+	ui = always
+	diff = auto
+	status = auto
+	branch = auto
+[apply]
+	whitespace = fix
+[format]
+	numbered = auto
+[status]
+	relativePaths = false
+[apply]
+	whitespace = fix
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -41,40 +59,16 @@
 	old = red bold
 	new = green bold
 [color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
+	added = green
+	changed = yellow
+	untracked = magenta
 [merge]
 	log = true
-[url "git@github.com:"]
-	insteadOf = "gh:"
-	pushInsteadOf = "github:"
-	pushInsteadOf = "git://github.com/"
-[url "git://github.com/"]
-	insteadOf = "github:"
-[url "git@gist.github.com:"]
-	insteadOf = "gst:"
-	pushInsteadOf = "gist:"
-	pushInsteadOf = "git://gist.github.com/"
-[url "git://gist.github.com/"]
-	insteadOf = "gist:"
-
-# Any GitHub repo with my username should be checked out r/w by default
-# http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules
-# [url "git@github.com:paulirish/"]
-#  insteadOf = "git://github.com/paulirish/"
-
-[credential]
-	helper = osxkeychain
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
-
-[push]
-	default = current
-[user]
-	name = James Dean
-	email = dean.jah@gmail.com
+[credential]
+	helper = osxkeychain

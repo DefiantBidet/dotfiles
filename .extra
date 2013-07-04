@@ -1,16 +1,11 @@
 # PATH additions
 PATH="$PATH:/usr/local/bin"
 PATH="$PATH:/usr/local/sbin"
+PATH="$PATH:/usr/local/mysql/bin"
+PATH="$PATH:/usr/local/share/npm/bin"
+PATH="$PATH:/usr/local/opt/coreutils/libexec/gnubin"
 PATH="$PATH:$HOME/bin"
 PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+PATH="$PATH:$HOME/Workspaces/Affinitive/FacebookApps/tools/bin"
 # ...
 export PATH
-
-# Git credentials
-# Not in the repository, to prevent people from accidentally committing under my name
-GIT_AUTHOR_NAME="James Dean"
-GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
-git config --global user.name "$GIT_AUTHOR_NAME"
-GIT_AUTHOR_EMAIL="dean.jah@gmail.com"
-GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
-git config --global user.email "$GIT_AUTHOR_EMAIL"
