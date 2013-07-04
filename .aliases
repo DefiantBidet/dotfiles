@@ -119,3 +119,4 @@ alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 10'"
 
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
+alias jah="growlnotify -t 'Its that time again!' -m 'You know what time it is.' --image ~/bin/plant.icns -n Calendar -s"
