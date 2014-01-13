@@ -9,6 +9,17 @@ function f() {
     find . -name "$1"
 }
 
+# resize images for favicon jank
+function resizeLogo () {
+    filename=$(basename "$1")
+    extension="${filename##*.}"
+    filename="${filename%.*}"
+
+    gm convert $1 -resize 75x75 $filename-75x75.$extension
+    gm convert $1 -resize 128x128 $filename-128x128.$extension
+    gm convert $1 -resize 96x96 $filename-96x96.$extension
+    gm convert $1 -resize 64x64 $filename-64x64.$extension
+}
 
 # lets toss an image onto my server and pbcopy that bitch.
 function scpp() {
@@ -130,4 +141,13 @@ aa_256 () {
             echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;
         done
     )
+}
+
+#open in finder shortcut
+go () {
+    if [[ -d $1 ]]; then
+        open $1
+    else
+        open .
+    fi
 }
