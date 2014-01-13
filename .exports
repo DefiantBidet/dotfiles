@@ -1,7 +1,7 @@
 # Make vim the default editor
 # export EDITOR="vim"
 # Make sublime the default editor
-export EDITOR="subl -nw"
+export EDITOR="subl3 -nw"
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
 
@@ -19,5 +19,6 @@ export HISTTIMEFORMAT
 export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
 
 export LOCAL_BIN_ROOT='/Users/jdean/bin';
-export FB_BIN_ROOT='/Users/jdean/Workspaces/Affinitive/FacebookApps/tools/bin';
-export PATH=$LOCAL_BIN_ROOT:$FB_BIN_ROOT:$PATH;
+# export FB_BIN_ROOT='/Users/jdean/Workspaces/Affinitive/FacebookApps/tools/bin';
+# export PATH=$LOCAL_BIN_ROOT:$FB_BIN_ROOT:$PATH;
+export PATH=$LOCAL_BIN_ROOT:$PATH;
