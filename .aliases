@@ -6,14 +6,6 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
-# programs
-alias slt2='open -a "Sublime Text 2"'
-alias slt3='open -a "Sublime Text"'
-
-# also/or do this:
-# ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl2
-# ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl3
-
 
 # be nice
 alias please=sudo
@@ -95,6 +87,7 @@ alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 alias g="git"
 alias v="vim"
 # alias y="yeoman"
+alias git='hub'
 
 # File size
 alias fs="stat -f \"%z bytes\""
@@ -123,3 +116,4 @@ alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 10'"
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 alias duck="growlnotify -a 'Cyberduck' 'Rubber Ducky!' -m '?!!??!'"
+alias talktome="say '$1'"

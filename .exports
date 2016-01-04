@@ -1,7 +1,7 @@
 # Make vim the default editor
 # export EDITOR="vim"
 # Make sublime the default editor
-export EDITOR="subl3 -nw"
+export EDITOR="subl -nw"
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
 
@@ -19,6 +19,13 @@ export HISTTIMEFORMAT
 export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
 
 export LOCAL_BIN_ROOT='/Users/jdean/bin';
+
 # export FB_BIN_ROOT='/Users/jdean/Workspaces/Affinitive/FacebookApps/tools/bin';
 # export PATH=$LOCAL_BIN_ROOT:$FB_BIN_ROOT:$PATH;
 export PATH=$LOCAL_BIN_ROOT:$PATH;
+
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# you will have to update this everytime you upgrade osx
+MACOSX_DEPLOYMENT_TARGET=10.9
+export MACOSX_DEPLOYMENT_TARGET
