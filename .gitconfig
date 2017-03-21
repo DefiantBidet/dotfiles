@@ -20,6 +20,7 @@
 	down = pull
 	up = push
 	p = push
+    pr = pull --rebase
 	pl = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
 	d  = diff
 	dc = diff --cached
@@ -66,7 +67,7 @@
 	log = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
