@@ -152,7 +152,7 @@ aa_256 () {
 }
 
 #open in finder shortcut
-go () {
+finderGo () {
     if [[ -d $1 ]]; then
         open $1
     else
