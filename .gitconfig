@@ -1,75 +1,73 @@
 [user]
-	name = James Dean
-	email = dean.jah@gmail.com
+    name = James Dean
+    email = dean.jah@gmail.com
 [push]
-	default = current
+    default = current
 [core]
-	attributesfile = ~/.gitattributes
-	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
-	autocrlf = false
-	safecrlf = false
-	editor = subl -nw
-	excludesfile = /Users/jdean/.gitignore_global
-	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
+    attributesfile = ~/.gitattributes
+    whitespace = fix,space-before-tab,tab-in-indent,trailing-space
+    autocrlf = false
+    safecrlf = false
+    editor = subl -nw
+    excludesfile = /Users/jdean/.gitignore_global
+    whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 [alias]
-	s = status -sb
-	st = status -sb
-	c = commit
-	ca = commit -a
-	co = checkout
-	down = pull
-	up = push
-	p = push
+    a = add
+    s = status -sb
+    st = status -sb
+    c = commit
+    ca = commit -a
+    co = checkout
+    down = pull
+    up = push
+    p = push
     pr = pull --rebase
-	pl = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
-	d  = diff
-	dc = diff --cached
-	df = diff --color --color-words --abbrev
-	lc = log ORIG_HEAD.. --stat --no-merges
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-	gl = log --oneline --decorate --stat --graph
-	sub = submodule update --init --recursive
-	whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
-	whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
-	pullall = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
-	prune-all = !git remote | xargs -n 1 git remote prune
-	# Undo a `git push`
-	undopush = push -f origin HEAD^:master
+    pl = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
+    d  = diff
+    dc = diff --cached
+    df = diff --color --color-words --abbrev
+    lc = log ORIG_HEAD.. --stat --no-merges
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    gl = log --oneline --decorate --stat --graph
+    sub = submodule update --init --recursive
+    whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+    whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+    pullall = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
+    prune-all = !git remote | xargs -n 1 git remote prune
+    # Undo a `git push`
+    undopush = push -f origin HEAD^:master
+[pull]
+    rebase = true
 [log]
-	decorate = short
+    decorate = short
 [color]
-	ui = always
-	diff = auto
-	status = auto
-	branch = auto
+    ui = always
+    diff = auto
+    status = auto
+    branch = auto
 [apply]
-	whitespace = fix
+    whitespace = fix
 [format]
-	numbered = auto
+    numbered = auto
 [status]
-	relativePaths = false
+    relativePaths = false
 [apply]
-	whitespace = fix
+    whitespace = fix
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+    current = yellow reverse
+    local = yellow
+    remote = green
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
 [color "status"]
-	added = green
-	changed = yellow
-	untracked = magenta
+    added = green
+    changed = yellow
+    untracked = magenta
 [merge]
-	log = true
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+    log = true
+    tool = kdiff3
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
