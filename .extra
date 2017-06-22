@@ -5,7 +5,12 @@ PATH="$PATH:/usr/local/mysql/bin"
 PATH="$PATH:/usr/local/share/npm/bin"
 PATH="$PATH:/usr/local/opt/coreutils/libexec/gnubin"
 PATH="$HOME/bin:$PATH"
-PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-# PATH="$PATH:$HOME/Workspaces/Affinitive/FacebookApps/tools/bin"
+PATH="$PATH:~/Code/git_projects/git-friendly"
+PATH="$PATH:`yarn global bin`"
+
 # ...
 export PATH
+
+export CBI_GOPHER_KEY=~/.ssh/cbi-gopher.pem
+
+export PYTHONPATH=/usr/bin/python

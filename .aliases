@@ -17,7 +17,6 @@ alias ..7='cd ../../../../../../../'
 alias ..8='cd ../../../../../../../../'
 alias ..9='cd ../../../../../../../../../'
 
-
 # be nice
 alias please=sudo
 alias hosts='sudo $EDITOR /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.com ;)
@@ -97,8 +96,7 @@ alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 # Shortcuts
 alias g="git"
 alias v="vim"
-# alias y="yeoman"
-alias git='hub'
+alias y="yarn"
 
 # File size
 alias fs="stat -f \"%z bytes\""

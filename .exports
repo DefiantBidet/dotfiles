@@ -19,12 +19,9 @@ export HISTTIMEFORMAT
 export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
 
 export LOCAL_BIN_ROOT='/Users/jdean/bin';
-# export FB_BIN_ROOT='/Users/jdean/Code/Affinitive/FacebookApps/tools/bin';
-# export PATH=$LOCAL_BIN_ROOT:$FB_BIN_ROOT:$PATH;
-export PATH=$LOCAL_BIN_ROOT:$PATH;
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # you will have to update this everytime you upgrade osx
-MACOSX_DEPLOYMENT_TARGET=10.9
+MACOSX_DEPLOYMENT_TARGET=10.12
 export MACOSX_DEPLOYMENT_TARGET

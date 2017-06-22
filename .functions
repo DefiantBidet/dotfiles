@@ -10,10 +10,10 @@ function f() {
 
 function qotd() {
     defaultGateway="$(netstat -rn | grep default | cut -f 13 -d ' ')"
-    if [ -z "$defaultGateway" ]; then
-        quoter --offline
-    else
+    if [ -n "$defaultGateway" ]; then
         quoter
+    else
+        quoter --offline
     fi
 }
 
@@ -43,6 +43,11 @@ function server() {
     # Set the default Content-Type to `text/plain` instead of `application/octet-stream`
     # And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)
     python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
+}
+
+function spa_server() {
+    open "http://localhost:8080/"
+    python -c $'import SimpleHTTPServer, SocketServer, urlparse, os;\n\nclass Handler( SimpleHTTPServer.SimpleHTTPRequestHandler ):\n\tdef do_GET( self ):\n\t\turlParams = urlparse.urlparse(self.path)\n\t\tif os.access( \'.\' + os.sep + urlParams.path, os.R_OK ):\n\t\t\tSimpleHTTPServer.SimpleHTTPRequestHandler.do_GET(self);\n\t\telse:\n\t\t\tself.send_response(200)\n\t\t\tself.send_header( \'Content-type\', \'text/html\' )\n\t\t\tself.end_headers()\n\t\t\tself.wfile.write( open(\'index.html\').read() )\n\nhttpd = SocketServer.TCPServer( (\'127.0.0.1\', 8080), Handler );\nhttpd.serve_forever();' "$port"
 }
 
 # git log with per-commit cmd-clickable GitHub URLs (iTerm)
@@ -158,4 +163,10 @@ finderGo () {
     else
         open .
     fi
+}
+
+
+# Here Comes the High Stepper!
+function Ahab () {
+    sudo docker ps | grep -v ^CONTAINER |cut -d' ' -f1 | xargs sudo docker stop && sudo docker ps -a | grep -v ^CONTAINER |cut -d' ' -f1 | xargs sudo docker rm && docker rmi $(docker images -q)
 }
