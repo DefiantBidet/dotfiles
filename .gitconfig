@@ -1,6 +1,6 @@
 [user]
-    name = James Dean
-    email = dean.jah@gmail.com
+	name = James Dean
+	email = defiantbidet@gmail.com
 [push]
     default = current
 [core]
@@ -21,8 +21,8 @@
     down = pull
     up = push
     p = push
-    pr = pull --rebase
     pl = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
+    pr = pull --rebase
     d  = diff
     dc = diff --cached
     df = diff --color --color-words --abbrev

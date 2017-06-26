@@ -1,17 +1,16 @@
+.DS_Store
+Code/DefiantBidet/image_editor/Gemfile.lock
+Gemfile.lock
+# Folder view configuration files
 # Compiled Python files
 *.pyc
-
-# Folder view configuration files
-.DS_Store
-Desktop.ini
-
-# Thumbnail cache files
-._*
+.sass-cache
+/Code/DefiantBidet/image_editor/node_modules
 Thumbs.db
-
+._*
+/Code/DefiantBidet/image_editor/.sass-cache
+.Trashes
+# Thumbnail cache files
+Desktop.ini
 # Files that might appear on external disks
 .Spotlight-V100
-.Trashes
-
-.sass-cache
-Gemfile.lock

@@ -1,10 +1,10 @@
 # Easier navigation: .., ..., ~ and -
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ~='cd ~' # `cd` is probably faster to type though
-alias -- -='cd -'
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~" # `cd` is probably faster to type though
+alias -- -="cd -"
 
 # numeric navigation:
 alias ..1='cd ../'
@@ -97,8 +97,9 @@ alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 # Shortcuts
 alias g="git"
 alias v="vim"
+alias y="yarn"
 # alias y="yeoman"
-alias git='hub'
+# alias git='hub'
 
 # File size
 alias fs="stat -f \"%z bytes\""
