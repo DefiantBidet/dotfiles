@@ -9,12 +9,12 @@ function f() {
     find . -name "$1"
 }
 
-function qotd() {
+function quoteOfTheDay() {
     defaultGateway="$(netstat -rn | grep default | cut -f 13 -d ' ')"
     if [ -z "$defaultGateway" ]; then
-        quoter --offline
+        qotd --offline
     else
-        quoter
+        qotd
     fi
 }
 

@@ -10,14 +10,18 @@ PATH="$PATH:./node_modules/.bin"
 PATH="$PATH:$HOME/.node/bin"
 PATH="$PATH:/usr/local/opt/ruby/bin"
 PATH="$PATH:/usr/sbin"
-# PATH="$PATH:$HOME/Workspaces/Affinitive/FacebookApps/tools/bin"
 PATH="/usr/local/bin:$PATH"
 PATH="$PATH:/usr/local/go/bin"
 PATH="$PATH:$HOME/.yarn/bin:$PATH"
 
+# GOPATH definitions
+GOPATH="$HOME/Code/GoLang"
+
+# CLASSPATH definitions
 CLASSPATH="$CLASSPATH:/usr/local/algs4/algs4.jar"
 CLASSPATH="$CLASSPATH:$HOME/Code/Java/JUnit/*"
 CLASSPATH="$CLASSPATH:$HOME/Code/Java/Mockito/mockito-core-2.7.22.jar"
 
 export PATH
+export GOPATH
 export CLASSPATH

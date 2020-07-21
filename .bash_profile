@@ -11,6 +11,9 @@ unset file
 # init rvm
 source ~/.rvm/scripts/rvm
 
+# bash completion
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
 # init nvm
 # . ~/.nvm/nvm.sh
 # [[ -s $HOME.nvm/nvm.sh ]] && . $HOME.nvm/nvm.sh # This loads NVM
@@ -29,5 +32,5 @@ export LANG="en_US"
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
 
-# testing out quote of the day.
-qotd
+# quote of the day.
+quoteOfTheDay
